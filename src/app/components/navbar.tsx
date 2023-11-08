@@ -1,7 +1,11 @@
 export default function Navbar() {
     return (
-            <nav className="flex flex-row justify-between items-center min-w-[100vw] h-16 bg-zinc-950">
-
+        // make navbar sticky
+            <nav className="sticky top-0 flex flex-row justify-between items-center min-w-[100vw] h-16 bg-zinc-950">
+            <div>
+                {/* call the title of the Section component */}
+                <p>{}</p>
+            </div>
             </nav>
     )
 }
