@@ -1,3 +1,5 @@
+# JumpLinks Component Project
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -14,23 +16,26 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Link to deployed project
+[https://jump-links.vercel.app/](https://jump-links.vercel.app/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Challenge Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The challenge was to build a jumplinks component that allows users to navigate to specific sections on the page. Key features implemented include:
 
-## Deploy on Vercel
+- A jumplinks navigation bar that reveals links to different page sections.
+- Clicking a link smoothly scrolls the page to the relevant section.
+- The navigation bar sticks to the top of the window upon scrolling and releases when all sections have been passed.
+- Active section highlighting within the navigation bar as the user scrolls through the page.
+- A progress indicator showing the user's current position within the jumplink sections.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
+This implementation makes use of:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- JavaScript for dynamic interaction and scroll events.
+- Tailwind CSS for styling the component and scroll behavior.
+- The project avoids pre-made components to showcase original code.
+
