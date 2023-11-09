@@ -65,12 +65,12 @@ export default function Home() {
       </header>
       <nav className="sticky top-0 flex flex-row flex-wrap   bg-zinc-950">
         <div className=" bg-zinc-950 flex min-w-[100vw] text-white">
-          {
+          {/* {
             sections.map((title, i) => {
               return (
                 <Links title={title} i={i} currentSection={currentSection} />
               )
-            })}
+            })} */}
           <Dropdown className="absolute top-0 right-0">
           </Dropdown>
 

@@ -17,11 +17,11 @@ const Dropdown = () => {
   };
 
   return (
-    <div className='relative py-6 pb-8'>
-      <div className="top-0 right-0">
+    <div className='py-6 pb-8'>
+      <div>
         <button
           type="button"
-          className="px-4 py-2 text-white"
+          className="px-4 py-2 text-white absolute right-0 top-0"
           onClick={toggleDropdown}
         >
           Show
