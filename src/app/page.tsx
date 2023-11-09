@@ -5,7 +5,6 @@ export default function Home() {
     let sections = [];
     const links = [];
     for (let i = 1; i <= 5; i++) {
-
       const id = `section-${i}`;
 
       sections.push(
@@ -17,6 +16,14 @@ export default function Home() {
         <a href={`#${id}`} key={i}>Section {i} </a>
       )
     }
+  
+  const observer = new IntersectionObserver(entries => {
+    const visibleSection = entries.find(entry => entry.isIntersecting);
+    if(visibleSection){
+      currentSection = visibleSection.target.id;
+      updateNav();
+    }
+  });
     return {
       sections, links
     }
@@ -32,7 +39,7 @@ export default function Home() {
       </section>
       {/* sticky nav bar here */}
       <nav className="sticky top-0 flex flex-row justify-between items-center min-w-[100vw] h-16 bg-zinc-950 text-white">
-        {links}
+        {currentSection}
       </nav>
       {/* sections here */}
       <div>
