@@ -5,8 +5,8 @@ import Links from './components/links';
 import Dropdown from './components/dropDown';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
-  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5"]);
-  const sectionRefs = useRef(new Array(5).fill(null));
+  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
+  const sectionRefs = useRef(new Array(7).fill(null));
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -64,7 +64,7 @@ export default function Home() {
         <p className="text-2xl">Section above jumplinks</p>
       </header>
       <nav className="sticky top-0 flex flex-row flex-wrap   bg-zinc-950">
-        <div className="absolute bg-zinc-950 flex min-w-[100vw] text-white">
+        <div className=" bg-zinc-950 flex min-w-[100vw] text-white">
           {
             sections.map((title, i) => {
               return (
@@ -72,7 +72,6 @@ export default function Home() {
               )
             })}
           <Dropdown className="absolute top-0 right-0">
-          
           </Dropdown>
 
         </div>
