@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react';
 
 export default function Home() {
 
   const createSections = () => {
-    let sections = [];
+    const sections = [];
     const links = [];
     for (let i = 1; i <= 5; i++) {
       const id = `section-${i}`;
@@ -16,14 +17,16 @@ export default function Home() {
         <a href={`#${id}`} key={i}>Section {i} </a>
       )
     }
-  
-  const observer = new IntersectionObserver(entries => {
-    const visibleSection = entries.find(entry => entry.isIntersecting);
-    if(visibleSection){
-      currentSection = visibleSection.target.id;
-      updateNav();
-    }
-  });
+    const [currentSection, setCurrentSection] = useState(null);
+    useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+        const visibleSection = entries.find(entry => entry.isIntersecting);
+        setCurrentSection(visibleSection.target.id);
+      });
+      sections.forEach(section => observer.observe(section));
+      return () => observer.disconnect();
+    }, [sections])
+
     return {
       sections, links
     }
