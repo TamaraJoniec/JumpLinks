@@ -1,8 +1,11 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
+import Sections from './components/sections';
+import Links from './components/links';
 
 export default function Home() {
-  const [currentSection, setCurrentSection] = useState('section-1');
+  const [currentSection, setCurrentSection] = useState(0);
+  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section after jumplinks",]);
   const sectionRefs = useRef(new Array(5).fill(null));
 
   useEffect(() => {
@@ -20,37 +23,6 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
-
-
-  const [sections, setSections] = useState();
-  const [links, setLinks] = useState();
-
-  for (let i = 1; i <= 5; i++) {
-    const id = `section-${i}`;
-
-    sections.push(
-      <section 
-        ref={el => sectionRefs.current[i] = el} 
-        id={id} 
-        key={i} 
-        className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40 my-5">
-        <p className="text-2xl">Section {i}</p>
-      </section>
-    );
-
-    links.push(
-      <a 
-        href={`#${id}`} 
-        key={i} 
-        className={currentSection === id ? "active" : ""} 
-        onClick={() => scrollToSection(id)}
-      >
-        Section {i} 
-      </a>
-    );
-  }
-  
-
 
   const createSections = () => {
     // create 5 sections and 5 links
@@ -79,16 +51,7 @@ export default function Home() {
         newSection.push(section);
         newLink.push(link);
       }
-      setSections(newSection);
-      setLinks(newLink);
     }, []);
-
-    console.log('Current section state:', currentSection)
-    console.log('Current link:', links[currentSection - 1])
-
-    return {
-      sections, links
-    }
 
   }
   createSections();
@@ -102,11 +65,21 @@ export default function Home() {
       </header>
       {/* sticky nav bar here */}
       <nav className="sticky top-0 flex flex-row justify-between items-center min-w-[100vw] h-16 bg-zinc-950 text-white">
-        {currentSection ? links[currentSection - 1] : null}
+        {
+          sections.map((title, i) => {
+            return (
+              <Links title={title} i={i} currentSection={currentSection} />
+            )
+          })}
       </nav>
       {/* sections here */}
       <div key="sections">
-        {sections}
+        {sections &&
+          sections.map((title, i) => {
+            return (
+              <Sections title={title} i={i} />
+            )
+          })}
       </div>
     </main>
   )
