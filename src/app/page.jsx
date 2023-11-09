@@ -1,9 +1,11 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import Sections from './components/sections';
-import Links from './components/links';
 import Dropdown from './components/dropDown';
+import Links from './components/links';
+// import DisplayLink from './components/displayLink';
 export default function Home() {
+  const [hoveredSection, setHoveredSection] = useState(null);
   const [currentSection, setCurrentSection] = useState(0);
   const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
   const sectionRefs = useRef(new Array(7).fill(null));
@@ -14,8 +16,8 @@ export default function Home() {
         if (entry.isIntersecting) {
           setCurrentSection(entry.target.id);
         }
-      });
-    }, { root: null, rootMargin: '0px', threshold: 0.6 });
+      },);}
+);
 
     sectionRefs.current.forEach(ref => {
       if (ref) observer.observe(ref);
@@ -41,6 +43,7 @@ export default function Home() {
           </section>
         );
         const handleLinkClick = () => {
+          setCurrentSection(id);
           window.scrollTo({ top: 0, behavior: "smooth" })
         }
         const link = (
@@ -63,14 +66,18 @@ export default function Home() {
       <header className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40">
         <p className="text-2xl">Section above jumplinks</p>
       </header>
-      <nav className="sticky top-0 flex flex-row flex-wrap   bg-zinc-950">
+      <nav className="sticky top-0 flex flex-row flex-wrap px-10  bg-zinc-950">
         <div className=" bg-zinc-950 flex min-w-[100vw] text-white">
-          {/* {
+          {/* show only the link to the currentSection it is hovering over */}
+          {sections &&
             sections.map((title, i) => {
+              const id = `section-${i + 1}`;
               return (
-                <Links title={title} i={i} currentSection={currentSection} />
+                <Links className="sticky top-0" title={title} i={i} currentSection={currentSection} onMouseEnter={() => setHoveredSection(title)} onMouseLeave={() => setHoveredSection(null)}>
+                  {currentSection === id && title}</Links>
               )
-            })} */}
+            })}
+          {/* <DisplayLink /> */}
           <Dropdown className="absolute top-0 right-0">
           </Dropdown>
 

@@ -21,7 +21,7 @@ const Dropdown = () => {
       <div>
         <button
           type="button"
-          className="px-4 py-2 text-white absolute right-0 top-0"
+          className="px-4 py-2 text-white absolute right-10 top-0"
           onClick={toggleDropdown}
         >
           Show

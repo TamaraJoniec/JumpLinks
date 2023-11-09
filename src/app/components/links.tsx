@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-type Props = {
+export type Props = {
     title?: string;
     i?: number;
     currentSection?: number;
