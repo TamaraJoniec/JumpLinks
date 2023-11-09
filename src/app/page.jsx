@@ -2,10 +2,10 @@
 import { useEffect, useState, useRef } from 'react';
 import Sections from './components/sections';
 import Links from './components/links';
-
+import Dropdown from './components/dropDown';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
-  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section after jumplinks",]);
+  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5"]);
   const sectionRefs = useRef(new Array(5).fill(null));
 
   useEffect(() => {
@@ -59,28 +59,36 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-10">
+    <div>
       <header className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40">
         <p className="text-2xl">Section above jumplinks</p>
       </header>
-      {/* sticky nav bar here */}
-      <nav className="sticky top-0 flex flex-row justify-between items-center min-w-[100vw] h-16 bg-zinc-950 text-white">
-        {
-          sections.map((title, i) => {
-            return (
-              <Links title={title} i={i} currentSection={currentSection} />
-            )
-          })}
+      <nav className="sticky top-0 flex flex-row flex-wrap   bg-zinc-950">
+        <div className="absolute bg-zinc-950 flex min-w-[100vw] text-white">
+          {
+            sections.map((title, i) => {
+              return (
+                <Links title={title} i={i} currentSection={currentSection} />
+              )
+            })}
+          <Dropdown className="absolute top-0 right-0">
+          
+          </Dropdown>
+
+        </div>
       </nav>
-      {/* sections here */}
-      <div key="sections">
-        {sections &&
-          sections.map((title, i) => {
-            return (
-              <Sections title={title} i={i} />
-            )
-          })}
-      </div>
-    </main>
+      <main className="flex min-h-screen flex-col items-center justify-between p-10">
+        {/* sections here */}
+        <div key="sections">
+          {sections &&
+            sections.map((title, i) => {
+              return (
+                <Sections title={title} i={i} />
+              )
+            })}
+        </div>
+      </main>
+    </div>
+
   )
 }

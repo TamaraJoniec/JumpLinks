@@ -1,18 +1,24 @@
+import * as React from 'react';
+
 type Props = {
-    title: string;
+    title?: string;
     i?: number;
-    currentSection: number;
+    currentSection?: number;
 };
 
 
 export default function Links({ title, i, currentSection }: Props) {
+
     return (
-        <a
-            href={`#section-${i}`}
-            key={i}
-            className={currentSection === i ? "active" : ""}
-        >
-            {title}
-        </a>
+        <nav className="flex flex-row p-4">
+            <a
+                href={`#section-${i}`}
+                key={i}
+                className={currentSection === i ? "active, sticky top-0 " : " "}
+            >
+                {title}
+            </a>
+        </nav>
+
     )
 }
