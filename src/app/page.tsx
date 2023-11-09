@@ -1,19 +1,20 @@
 import Link from 'next/link'
 
-export default function Home( {title} : {title: string  }) {
+export default function Home({ title }: { title: string }) {
 
   const createSections = () => {
     let sections = [];
     for (let i = 1; i <= 5; i++) {
       sections.push(
-        <section id={`"section-${i}"`} key={i}  className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40 my-5">
+        <section id={`"section-${i}"`} key={i} className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40 my-5">
           <p className="text-2xl">{title} {i}</p>
         </section>
       )
-        return sections;
-    }
+    } 
+    return sections;
+  }      
+  const sections = createSections();
 
-  }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
       <section className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40">
@@ -33,7 +34,10 @@ export default function Home( {title} : {title: string  }) {
         </div>
       </nav>
       {/* sections here */}
-      {createSections()}
+      <div>
+        {sections}
+      </div>
+    
     </main>
   )
 }
