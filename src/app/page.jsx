@@ -16,7 +16,7 @@ export default function Home() {
       <header className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40">
         <p className="text-2xl">Section above jumplinks</p>
       </header>
-      <nav className="sticky top-0 flex flex-row flex-wrap px-10  bg-zinc-950">
+      <nav className="sticky top-0 flex flex-row flex-wrap  bg-zinc-950">
         <div className=" bg-zinc-950 min-w-[100vw] grid grid-rows-1 text-white">
           {/* pass the currently active section to the displaylink component */}
           {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}

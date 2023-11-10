@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { useEffect, useState } from "react";
 export default function ProgressBar() {
     const [scrollTop, setScrollTop] = useState(0);
@@ -27,9 +27,9 @@ export default function ProgressBar() {
 
 
     return (
-        <div className="progressMainWrapper bg-black h-[15] sticky top-20 left-[0] z-1 w-[100vw]">
+        <div className="progressMainWrapper bg-black h-[15] m-0 sticky bottom-0 left-[0] z-1 w-[100vw] min-w-[100vw]">
             <div
-                className="progressMainStyle h-[15px] bg-blue-500 w-[15vw]"
+                className="progressMainStyle h-[5px] bg-blue-300 w-[15vw]"
                 style={{ width: `${scrollTop}%` }}
             >
             </div>
