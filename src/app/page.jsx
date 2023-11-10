@@ -53,7 +53,7 @@ export default function Home() {
         <div className=" bg-zinc-950 flex min-w-[100vw] text-white">
           {/* pass the currently active section to the displaylink component */}
           {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}
-          <Dropdown className="top-0 right-0">
+          <Dropdown className="sticky right-0">
           </Dropdown>
         </div>
       </nav>

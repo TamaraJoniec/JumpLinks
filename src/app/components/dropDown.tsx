@@ -3,8 +3,13 @@ import React, { useState } from 'react'
 import Links from './links';
 
 const Dropdown = () => {
-  const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
-  const [currentSection] = useState(0);
+  const [sections, setSections] = useState(["Section one", "Section two", "Section three", "Section four", "Section five", "Section six", "Section seven"]);
+  const [currentSection] = useState(
+    // pass in the mutable reference to the section that is being scrolled over
+    // this will be used to determine which section is active
+
+
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -20,7 +25,7 @@ const Dropdown = () => {
       <div className='py-6 pb-8'>
         {/* make this p tag a link to the section that is being scrolled over */}
 
-        <h2 className="text-2xl font-semibold">{`section ${currentSection + 1}`}</h2>
+        <h2 className="text-2xl font-semibold">{`section ${currentSection }`} fix this </h2>
   
         {!isOpen && (
           <button
@@ -34,14 +39,14 @@ const Dropdown = () => {
       </div>
       {
         isOpen && (
-          <div className="mt-2 w-[] bg-zinc-950 ring-black text-white">
+          <div className="ml-40 mb-10 bg-zinc-950 ring-black text-white grid gap-4 grid-cols-1 grid-rows-1">
             <button
               type="button"
-              className="px-4 py-2 text-white absolute right-10 top-5"
+              className="py-5 px-10 text-white absolute right-10 top-5"
               onClick={closeDropdown}
             >Hide
             </button>
-            <ul className="relative grid grid-cols-3 gap-4"  onClick={closeDropdown}>
+            <ul className="relative grid grid-cols-3 gap-10"  onClick={closeDropdown}>
               {
                 sections.map((title, i) => {
                   return (
