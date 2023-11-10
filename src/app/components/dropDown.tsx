@@ -2,14 +2,14 @@
 import React, { useState } from 'react'
 import Links from './links';
 
-const Dropdown = () => {
-  const [sections, setSections] = useState(["Section one", "Section two", "Section three", "Section four", "Section five", "Section six", "Section seven"]);
-  const [currentSection] = useState(
-    // pass in the mutable reference to the section that is being scrolled over
-    // this will be used to determine which section is active
+export type Props = {
+  currentSection: number;
+  sections: Array<string>; 
+  setCurrentSection(currentSection: number): null;
+};
 
-
-  );
+const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,11 +22,9 @@ const Dropdown = () => {
 
   return (
     <div className="mt-2 bg-zinc-950  text-white">
-      <div className='py-6 pb-8'>
+      <div className='py-6 pb-8 grid grid-rows-1'>
         {/* make this p tag a link to the section that is being scrolled over */}
-
-        <h2 className="text-2xl font-semibold">{`section ${currentSection }`} fix this </h2>
-  
+        <h2 className="text-2xl font-semibold">{`section ${currentSection + 1}`}</h2>
         {!isOpen && (
           <button
             type="button"
@@ -48,9 +46,9 @@ const Dropdown = () => {
             </button>
             <ul className="relative grid grid-cols-3 gap-10"  onClick={closeDropdown}>
               {
-                sections.map((title, i) => {
+                sections?.map((title, i) => {
                   return (
-                    <Links title={title} i={i} currentSection={currentSection} />
+                    <Links title={title} i={i} setCurrentSection={setCurrentSection} currentSection={currentSection} />
                   )
                 })}
             </ul>
