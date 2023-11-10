@@ -17,30 +17,39 @@ const Dropdown = () => {
   };
 
   return (
+    <div className="mt-2 w-[] bg-zinc-950  text-white">
     <div className='py-6 pb-8'>
-      <div>
+      {!isOpen && (
         <button
           type="button"
           className="px-4 py-2 text-white absolute right-10 top-0"
           onClick={toggleDropdown}
         >
           Show
-        </button>    
-        </div>
-        {isOpen && (
-          <div className="mt-2 w-[] bg-zinc-950 ring-black text-white">
-            <ul className="grid grid-cols-3 gap-4">
-            {
+        </button>
+      )}
+    </div>
+        {
+    isOpen && (
+      <div className="mt-2 w-[] bg-zinc-950 ring-black text-white">
+        <button
+          type="button"
+          className="px-4 py-2 text-white absolute right-10 top-0"
+          onClick={closeDropdown}
+        >Hide
+        </button>
+        <ul className="grid grid-cols-3 gap-4">
+          {
             sections.map((title, i) => {
               return (
                 <Links title={title} i={i} currentSection={currentSection} />
               )
             })}
-            </ul>
-          </div>
-        )}
-  
-    </div>
+        </ul>
+      </div>
+    )
+  }
+  </div>
   )
 }
 
