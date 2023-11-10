@@ -27,7 +27,7 @@ const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
       
       <div className='py-6 pb-8 grid grid-rows-1'>
         {/* make this p tag a link to the section that is being scrolled over */}
-        <h2 className="text-2xl font-semibold px-10">{`section ${currentSection + 1}`}</h2>
+        <h2 className="text-2xl font-semibold px-10">{`section ${+currentSection + 1}`}</h2>
         {!isOpen && (
           <button
             type="button"
@@ -52,7 +52,7 @@ const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
               {
                 sections?.map((title, i) => {
                   return (
-                    <Links  title={title} i={i} setCurrentSection={setCurrentSection} currentSection={currentSection} />
+                    <Links key={i} title={title} i={i} setCurrentSection={setCurrentSection} currentSection={currentSection} />
                   )
                 })}
             </ul>

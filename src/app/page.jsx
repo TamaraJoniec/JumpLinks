@@ -2,29 +2,24 @@
 import { useEffect, useState } from 'react';
 import Sections from './components/sections';
 import Dropdown from './components/dropDown';
-// import DisplayLink from './components/displayLink';
-
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [sections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
-  const [currentId, setCurrentId] = useState(0);
-
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      console.log(entries)
       const topEntry = entries.reduce((prev, current) => 
         (prev.intersectionRatio > current.intersectionRatio) ? prev : current
       );
 
       if (topEntry.isIntersecting) {
-        setCurrentId(topEntry.target.id);    
-        console.log(topEntry.target.id)
-
+        if (topEntry.target.dataset.index){
+          setCurrentSection(topEntry.target.dataset.index);
+        }
       }
-    }, { threshold: [1] }); 
+    }, { threshold: [0.1] }); 
 
-    document.querySelectorAll('.observed-element').forEach(element => {
+    document.querySelectorAll('section').forEach(element => {
       observer.observe(element);
     });
     return () => observer.disconnect(); 
