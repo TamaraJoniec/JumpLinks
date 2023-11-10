@@ -2,16 +2,16 @@ import * as React from 'react';
 export type Props = {
     title?: string;
     i?: number;
-    currentSection?: number;
+    currentSection?: string;
     color?: string;
-    setCurrentSection(currentSection: number): null;
+    setCurrentSection(currentSection: string): null;
 };
 
 
 export default function Links({ title, i, currentSection, setCurrentSection }: Props) {
     function handleClick() {
 
-        setCurrentSection(i || 0);
+        setCurrentSection(title || 'Places To Visit In Leeds');
     }
     return (
         <nav className="flex flex-row p-4">

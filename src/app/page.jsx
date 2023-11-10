@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import Sections from './components/sections';
 import Dropdown from './components/dropDown';
-
+import Data from "./data.json"
 export default function Home() {
-  const [currentSection, setCurrentSection] = useState(0);
-  const [sections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
+  const [currentSection, setCurrentSection] = useState('Places To Visit In Leeds');
+  const [sections] = useState([...Data.sections]);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const topEntry = entries.reduce((prev, current) => 
@@ -13,8 +13,8 @@ export default function Home() {
       );
 
       if (topEntry.isIntersecting) {
-        if (topEntry.target.dataset.index){
-          setCurrentSection(topEntry.target.dataset.index);
+        if (topEntry.target.dataset.title){
+          setCurrentSection(topEntry.target.dataset.title);
         }
       }
     }, { threshold: [0.1] }); 
@@ -24,18 +24,13 @@ export default function Home() {
     });
     return () => observer.disconnect(); 
   }, []);
-
-  // loop 5 times to generate a link for each section
   return (
     <div>
-      <header className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40">
-        <p className="text-2xl">Section above jumplinks</p>
+      <header className=" min-h-[75vh] min-w-[100vw] bg-slate-300 py-10 px-40  bg-auto bg-no-repeat bg-center" style={{backgroundImage: `url('https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/United%20Kingdom/Yorkshire/Leeds/Leeds-lights-roads-Getty.jpg')`, }}>
       </header>
       <nav className="sticky top-0 flex flex-row flex-wrap  bg-zinc-950">
         <div className=" bg-zinc-950 min-w-[100vw] grid grid-rows-1 text-white">
-          {/* pass the currently active section to the displaylink component */}
-          {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}
-          <Dropdown className="sticky right-0"
+    <Dropdown className="sticky right-0"
             setCurrentSection={setCurrentSection}
             sections={sections}
             currentSection={currentSection} >
@@ -47,9 +42,9 @@ export default function Home() {
           
         <div key="sections">
           {sections &&
-            sections.map((title, i) => {
+            sections.map((section, i) => {
               return (
-                <Sections title={title} i={i} key={i}  />
+                <Sections section={section} i={i} key={i}  />
               )
             })}
         </div>
