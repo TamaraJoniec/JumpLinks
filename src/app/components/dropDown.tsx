@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Links from './links';
+import ProgressBar from './progressBar';
 
 export type Props = {
   currentSection: number;
@@ -25,6 +26,7 @@ const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
       <div className='py-6 pb-8 grid grid-rows-1'>
         {/* make this p tag a link to the section that is being scrolled over */}
         <h2 className="text-2xl font-semibold">{`section ${currentSection + 1}`}</h2>
+        <ProgressBar />
         {!isOpen && (
           <button
             type="button"

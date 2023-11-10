@@ -9,10 +9,7 @@ export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [sections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  
-  
   // loop 5 times to generate a link for each section
   return (
     <div>
@@ -23,17 +20,18 @@ export default function Home() {
         <div className=" bg-zinc-950 min-w-[100vw] grid grid-rows-1 text-white">
           {/* pass the currently active section to the displaylink component */}
           {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}
-       
-          <Dropdown className="sticky right-0"  
-          setCurrentSection = {setCurrentSection} 
-          sections={sections} 
-          currentSection={currentSection} >
+
+          <Dropdown className="sticky right-0"
+            setCurrentSection={setCurrentSection}
+            sections={sections}
+            currentSection={currentSection} >
           </Dropdown>
 
         </div>
       </nav>
+
       <main className="flex min-h-screen flex-col items-center justify-between p-10">
-        {/* sections here */}
+          
         <div key="sections">
           {sections &&
             sections.map((title, i) => {
