@@ -8,7 +8,27 @@ import Dropdown from './components/dropDown';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [sections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
+  const [currentId, setCurrentId] = useState(0);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      console.log(entries)
+      const topEntry = entries.reduce((prev, current) => 
+        (prev.intersectionRatio > current.intersectionRatio) ? prev : current
+      );
+
+      if (topEntry.isIntersecting) {
+        setCurrentId(topEntry.target.id);    
+        console.log(topEntry.target.id)
+
+      }
+    }, { threshold: [1] }); 
+
+    document.querySelectorAll('.observed-element').forEach(element => {
+      observer.observe(element);
+    });
+    return () => observer.disconnect(); 
+  }, []);
 
   // loop 5 times to generate a link for each section
   return (
@@ -20,13 +40,11 @@ export default function Home() {
         <div className=" bg-zinc-950 min-w-[100vw] grid grid-rows-1 text-white">
           {/* pass the currently active section to the displaylink component */}
           {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}
-
           <Dropdown className="sticky right-0"
             setCurrentSection={setCurrentSection}
             sections={sections}
             currentSection={currentSection} >
           </Dropdown>
-
         </div>
       </nav>
 
@@ -36,7 +54,7 @@ export default function Home() {
           {sections &&
             sections.map((title, i) => {
               return (
-                <Sections title={title} i={i} />
+                <Sections title={title} i={i} key={i}  />
               )
             })}
         </div>
