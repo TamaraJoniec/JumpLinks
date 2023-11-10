@@ -2,10 +2,11 @@
 import { useEffect, useState } from 'react';
 import Sections from './components/sections';
 import Dropdown from './components/dropDown';
-import DisplayLink from './components/displayLink';
+// import DisplayLink from './components/displayLink';
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
   const [sections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
+  const [activeSection, setActiveSection] = useState(0);
 
   const createSections = () => {
     // create 5 sections and 5 links
@@ -36,9 +37,12 @@ export default function Home() {
         newLink.push(link);
       }
     }, []);
-
   }
+
   createSections();
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   // loop 5 times to generate a link for each section
   return (
     <div>
@@ -47,8 +51,9 @@ export default function Home() {
       </header>
       <nav className="sticky top-0 flex flex-row flex-wrap px-10  bg-zinc-950">
         <div className=" bg-zinc-950 flex min-w-[100vw] text-white">
-          <DisplayLink />
-          <Dropdown className="absolute top-0 right-0">
+          {/* pass the currently active section to the displaylink component */}
+          {/* <DisplayLink activeSection={activeSection} setActiveSection={setActiveSection} /> */}
+          <Dropdown className="top-0 right-0">
           </Dropdown>
         </div>
       </nav>
