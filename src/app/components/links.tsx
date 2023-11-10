@@ -4,6 +4,7 @@ export type Props = {
     title?: string;
     i?: number;
     currentSection?: number;
+    color?: string;
 };
 
 

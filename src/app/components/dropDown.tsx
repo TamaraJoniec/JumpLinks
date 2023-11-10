@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Links from './links';
 
 const Dropdown = () => {
-  const currentSection = useState(0);
+  const [currentSection] = useState(0);
   const [sections, setSections] = useState(["Section 1", "Section 2", "Section 3", "Section 4", "Section 5", "Section 6", "Section 7"]);
 
   const [isOpen, setIsOpen] = useState(false);
