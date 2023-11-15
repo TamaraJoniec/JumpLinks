@@ -2,35 +2,50 @@
     "sections": [
         {
             "title": "Royal Armouries Museum",
-            "description": "Delve into the world of arms and armor at the Royal Armouries Museum, one of the most fascinating attractions in Leeds. This museum houses a remarkable collection of arms and armor from across the globe, showcasing over 8,500 objects in five galleries: War, Tournament, Oriental, Self Defence, and Hunting. The museum is not just about static displays; it regularly hosts live demonstrations, jousting tournaments, and hands-on exhibits, making it a dynamic and engaging experience for all ages."
+            "description": "Delve into the world of arms and armor at the Royal Armouries Museum, one of the most fascinating attractions in Leeds. This museum houses a remarkable collection of arms and armor from across the globe, showcasing over 8,500 objects in five galleries: War, Tournament, Oriental, Self Defence, and Hunting. The museum is not just about static displays; it regularly hosts live demonstrations, jousting tournaments, and hands-on exhibits, making it a dynamic and engaging experience for all ages.",
+            "image": "https://royalarmouries.org/sites/default/files/styles/uncropped_large/public/2023-07/Royal%20Armouries%20Museum-Leeds-adjusted.jpg?itok=AKSVZW--"
         },
         {
             "title": "Leeds Kirkgate Market",
-            "description": "Experience the vibrant atmosphere of Leeds Kirkgate Market, one of the largest indoor markets in Europe. This historic market dates back to the 19th century and is a hub of activity, offering everything from fresh produce and international cuisine to clothing and crafts. It's a great place to experience local culture, enjoy some delicious food, and find unique souvenirs."
+            "description": "Experience the vibrant atmosphere of Leeds Kirkgate Market, one of the largest indoor markets in Europe. This historic market dates back to the 19th century and is a hub of activity, offering everything from fresh produce and international cuisine to clothing and crafts. It's a great place to experience local culture, enjoy some delicious food, and find unique souvenirs.",
+            "image": "https://www.visitleeds.co.uk/wp-content/uploads/2023/09/419e8c3e21ee3139ac0ada8d9aeb4fc8-1.jpg"
+
         },
         {
             "title": "Harewood House",
-            "description": "Explore the magnificent Harewood House, a stately home set in the beautiful Yorkshire countryside. This 18th-century house is renowned for its stunning architecture, exquisite art collections, and beautifully landscaped gardens. Visitors can enjoy tours of the house, stroll through the gardens, and even spot a variety of birds in the Bird Garden."
+            "description": "Explore the magnificent Harewood House, a stately home set in the beautiful Yorkshire countryside. This 18th-century house is renowned for its stunning architecture, exquisite art collections, and beautifully landscaped gardens. Visitors can enjoy tours of the house, stroll through the gardens, and even spot a variety of birds in the Bird Garden.",
+            "image": "https://media.houseandgarden.co.uk/photos/61893c174a03b8fcef3d11ff/master/pass/pg20075x.jpg"
+
         },
         {
             "title": "Leeds Corn Exchange",
-            "description": "Admire the architectural beauty of Leeds Corn Exchange, a stunning Victorian building now housing an eclectic mix of independent boutiques, shops, and eateries. This iconic structure, with its remarkable dome and spacious interior, is a must-visit for those who love unique architecture and shopping. It's not just a shopping destination but a testament to Leeds' rich heritage."
+            "description": "Admire the architectural beauty of Leeds Corn Exchange, a stunning Victorian building now housing an eclectic mix of independent boutiques, shops, and eateries. This iconic structure, with its remarkable dome and spacious interior, is a must-visit for those who love unique architecture and shopping. It's not just a shopping destination but a testament to Leeds' rich heritage.",
+            "image": "https://www.anitamorrisassociates.co.uk/wp-content/uploads/2017/03/Standing-proud-at-the-heart-of-Leeds-city-centre-is-the-Leeds-Corn-Exchange.-c-Simon-Dewhurst.jpg"
+
         },
         {
             "title": "Roundhay Park",
-            "description": "Escape to the tranquility of Roundhay Park, one of the biggest city parks in Europe. This park offers a variety of attractions, including Tropical World, which houses a collection of tropical plants and animals. Visitors can enjoy long walks around the park's lakes, explore beautiful gardens, and relax in the vast open green spaces."
+            "description": "Escape to the tranquility of Roundhay Park, one of the biggest city parks in Europe. This park offers a variety of attractions, including Tropical World, which houses a collection of tropical plants and animals. Visitors can enjoy long walks around the park's lakes, explore beautiful gardens, and relax in the vast open green spaces.",
+            "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/412000/412525-Canal-Gardens.jpg"
+
         },
         {
             "title": "Leeds Art Gallery",
-            "description": "Immerse yourself in the world of art at Leeds Art Gallery. This gallery is renowned for its impressive collection of 20th-century British art, along with a range of contemporary and historic works. The gallery's exhibitions change regularly, offering a fresh and dynamic experience with each visit. It's a great spot for art lovers and those looking to explore the creative side of Leeds."
+            "description": "Immerse yourself in the world of art at Leeds Art Gallery. This gallery is renowned for its impressive collection of 20th-century British art, along with a range of contemporary and historic works. The gallery's exhibitions change regularly, offering a fresh and dynamic experience with each visit. It's a great spot for art lovers and those looking to explore the creative side of Leeds.",
+            "image": "https://yorkshire-sculpture.org/wp-content/uploads/2019/02/LAG-Justin-Slee-copy.jpg"
+
         },
         {
             "title": "Temple Newsam",
-            "description": "Discover the historical treasure of Temple Newsam, a Tudor-Jacobean house with sprawling grounds and gardens. This estate offers a glimpse into the past with its beautifully furnished rooms and impressive art collection. The estate's farm is a hit with families, offering a chance to meet various farm animals and learn about farm life."
+            "description": "Discover the historical treasure of Temple Newsam, a Tudor-Jacobean house with sprawling grounds and gardens. This estate offers a glimpse into the past with its beautifully furnished rooms and impressive art collection. The estate's farm is a hit with families, offering a chance to meet various farm animals and learn about farm life.",
+            "image": "https://res.dayoutwiththekids.co.uk/image/upload/w_1600,q_75,c_fill/v1594123123/attractions/t/temple-newsam-08c316a4/35049-temple-newsam-leeds-01.jpg"
+
         },
         {
             "title": "Leeds City Museum",
-            "description": "Uncover the history and culture of Leeds at the Leeds City Museum. This museum offers a diverse range of exhibits, from ancient Egyptian artifacts to displays about the history of Leeds. It's a fantastic educational resource, offering interactive exhibits that make learning about history fun and engaging. The museum is perfect for a family day out or for anyone interested in the local history of the city."
+            "description": "Uncover the history and culture of Leeds at the Leeds City Museum. This museum offers a diverse range of exhibits, from ancient Egyptian artifacts to displays about the history of Leeds. It's a fantastic educational resource, offering interactive exhibits that make learning about history fun and engaging. The museum is perfect for a family day out or for anyone interested in the local history of the city.",
+            "image": "https://www.austinsmithlord.com/wp-content/uploads/2018/10/ZZZ068_N74-1024x768.jpg"
+
         }
     ]
 }
