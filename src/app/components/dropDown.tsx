@@ -46,7 +46,7 @@ const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
               onClick={closeDropdown}
             >Hide
             </button>
-            <ul className="relative grid grid-cols-3 gap-10"  onClick={closeDropdown}>
+            <ul className="relative grid grid-cols-3 gap-10 pt-10"  onClick={closeDropdown}>
               {
                 sections?.map((section, i) => {
                   return (

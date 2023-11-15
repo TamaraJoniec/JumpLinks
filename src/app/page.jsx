@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <main className="flex min-h-screen flex-col items-center justify-between">
 
         <div key="sections">
           {sections &&
@@ -49,6 +49,7 @@ export default function Home() {
             })}
         </div>
       </main>
+      <footer className="bg-black h-[10vh] text-center flex flex-row justify-center items-center text-white">Made with ❤️ by Tamara</footer>
     </div>
 
   )
