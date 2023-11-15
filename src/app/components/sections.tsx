@@ -16,8 +16,8 @@ export default function Sections({ section, i }: Props) {
       className="min-h-[75vh] min-w-[100vw] bg-slate-300 z-0 relative my-10">
       <div className="bg-black opacity-70 z-1 min-h-[75vh] min-w-[100vw] absolute py-10 px-40" aria-label={section.alt}></div>
       <div className="absolute z-2">
-        <h3 className="p-20 text-2xl text-white">{section.title}</h3>
-        <p className="p-20 text-xl text-white">{section.description}</p>
+        <h3 className="p-10 md:p-20 text-2xl text-white">{section.title}</h3>
+        <p className="p-10 text-md md:p-20 md:text-xl text-white">{section.description}</p>
       </div>
     </section>
   )

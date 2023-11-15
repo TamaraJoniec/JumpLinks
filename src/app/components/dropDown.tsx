@@ -39,14 +39,14 @@ const Dropdown = ({ setCurrentSection, sections, currentSection }: Props) => {
       <ProgressBar />
       {
         isOpen && (
-          <div className="ml-40 mb-10 bg-zinc-950 ring-black text-white grid gap-4 grid-cols-1 grid-rows-1">
+          <div className="md:ml-40 mb-10 bg-zinc-950 ring-black text-white grid gap-4 grid-cols-1 grid-rows-1">
             <button
               type="button"
               className="py-5 px-10 text-white absolute right-10 top-5"
               onClick={closeDropdown}
             >Hide
             </button>
-            <ul className="relative grid grid-cols-3 gap-10 pt-10"  onClick={closeDropdown}>
+            <ul className="relative ml-10 md:grid md:grid-cols-3 gap-10 pt-10"  onClick={closeDropdown}>
               {
                 sections?.map((section, i) => {
                   return (
