@@ -23,7 +23,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 [https://jump-links.vercel.app/](https://jump-links.vercel.app/)
 
 ## Demo
-<video src="/gif.gif" alt="gif preview" width="600" height="400" loop autoplay></video>
+![Website Demo](./src/demo.gif)
+
 
 ## Challenge Overview
 
