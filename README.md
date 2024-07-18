@@ -42,4 +42,5 @@ This implementation makes use of:
 - JavaScript for dynamic interaction and scroll events.
 - Tailwind CSS for styling the component and scroll behavior.
 - The project avoids pre-made components to showcase original code.
-
+- Next.js
+- Vercel: For deploying and hosting the Next.js application.
